@@ -356,10 +356,132 @@ export const data = {
       "payment_status": "Refunded",
       "booking_status": "Cancelled"
     }
+  ],
+
+
+  hotels : [
+    {
+      "images": "https://kiswa.net/themes/star-travel/demo/demo-ltr/admin-demo/images/hotel2.jpg",
+      "name": "The Grand Resort",
+      "city": "Paris",
+      "country": "France",
+      "rating": 4.8,
+      "price_range": "$$$",
+      "available_rooms": 12,
+      "facilities": "Free Wi-Fi, Swimming Pool, Gym, Spa, Restaurant",
+      "contact_phone": "+33 1 23 45 67 89",
+      "contact_email": "info@thegrandresort.com"
+    },
+    {
+      "images": "https://kiswa.net/themes/star-travel/demo/demo-ltr/admin-demo/images/hotel2.jpg",
+      "name": "City View Hotel",
+      "city": "New York",
+      "country": "USA",
+      "rating": 4.2,
+      "price_range": "$$",
+      "available_rooms": 8,
+      "facilities": "Free Wi-Fi, Fitness Center, Restaurant, Bar",
+      "contact_phone": "+1 212 123 4567",
+      "contact_email": "contact@cityviewhotel.com"
+    },
+    {
+      "images": "https://kiswa.net/themes/star-travel/demo/demo-ltr/admin-demo/images/hotel2.jpg",
+      "name": "Mountain Retreat",
+      "city": "Denver",
+      "country": "USA",
+      "rating": 4.6,
+      "price_range": "$$$",
+      "available_rooms": 5,
+      "facilities": "Free Wi-Fi, Mountain View, Hiking Trails, Restaurant, Fireplace",
+      "contact_phone": "+1 303 987 6543",
+      "contact_email": "info@mountainretreat.com"
+    },
+    {
+      "images": "https://kiswa.net/themes/star-travel/demo/demo-ltr/admin-demo/images/hotel2.jpg",
+      "name": "Seaside Villa",
+      "city": "Los Angeles",
+      "country": "USA",
+      "rating": 4.5,
+      "price_range": "$$$",
+      "available_rooms": 20,
+      "facilities": "Beach Access, Spa, Free Wi-Fi, Restaurant",
+      "contact_phone": "+1 310 555 1234",
+      "contact_email": "info@seasidevilla.com"
+    },
+    {
+      "images": "https://kiswa.net/themes/star-travel/demo/demo-ltr/admin-demo/images/hotel2.jpg",
+      "name": "Skyline Tower",
+      "city": "Chicago",
+      "country": "USA",
+      "rating": 4.7,
+      "price_range": "$$$$",
+      "available_rooms": 15,
+      "facilities": "Swimming Pool, Rooftop Bar, Gym, Free Wi-Fi",
+      "contact_phone": "+1 312 555 6789",
+      "contact_email": "contact@skylinetower.com"
+    },
+    {
+      "images": "https://kiswa.net/themes/star-travel/demo/demo-ltr/admin-demo/images/hotel2.jpg",
+      "name": "Lakeside Inn",
+      "city": "Chicago",
+      "country": "USA",
+      "rating": 4.0,
+      "price_range": "$$",
+      "available_rooms": 10,
+      "facilities": "Lake View, Free Wi-Fi, Restaurant",
+      "contact_phone": "+1 312 555 2345",
+      "contact_email": "info@lakesideinn.com"
+    },
+    {
+      "images": "https://kiswa.net/themes/star-travel/demo/demo-ltr/admin-demo/images/hotel2.jpg",
+      "name": "Sunset Hotel",
+      "city": "Miami",
+      "country": "USA",
+      "rating": 4.3,
+      "price_range": "$$$",
+      "available_rooms": 30,
+      "facilities": "Ocean View, Pool, Free Wi-Fi, Restaurant",
+      "contact_phone": "+1 305 555 9876",
+      "contact_email": "contact@sunsethotel.com"
+    },
+    {
+      "images": "https://kiswa.net/themes/star-travel/demo/demo-ltr/admin-demo/images/hotel2.jpg",
+      "name": "Royal Palace Hotel",
+      "city": "London",
+      "country": "UK",
+      "rating": 5.0,
+      "price_range": "$$$$$",
+      "available_rooms": 5,
+      "facilities": "Luxury Spa, Fine Dining, Pool, Free Wi-Fi",
+      "contact_phone": "+44 20 7946 0958",
+      "contact_email": "info@royalpalacehotel.com"
+    },
+    {
+      "images": "https://kiswa.net/themes/star-travel/demo/demo-ltr/admin-demo/images/hotel2.jpg",
+      "name": "Desert Oasis",
+      "city": "Phoenix",
+      "country": "USA",
+      "rating": 4.4,
+      "price_range": "$$$",
+      "available_rooms": 18,
+      "facilities": "Desert View, Pool, Free Wi-Fi, Restaurant",
+      "contact_phone": "+1 602 555 1111",
+      "contact_email": "info@desertoasis.com"
+    },
+    {
+      "images": "https://kiswa.net/themes/star-travel/demo/demo-ltr/admin-demo/images/hotel2.jpg",
+      "name": "Coastal Retreat",
+      "city": "San Diego",
+      "country": "USA",
+      "rating": 4.7,
+      "price_range": "$$$$",
+      "available_rooms": 25,
+      "facilities": "Beach Access, Spa, Free Wi-Fi, Bar",
+      "contact_phone": "+1 858 555 4444",
+      "contact_email": "info@coastalretreat.com"
+    }
   ]
 };
-
-
 
 
 

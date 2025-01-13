@@ -156,24 +156,27 @@ const DataTable = ({ data, columns, onActionClick, table_heading }) => {
                   {columns.map((column) => {
                     return (
                       <TableCell key={column.key}>
-                      {column.key === 'payment_status' ? (
-                        <span
-                          className={
-                            item[column.key] === 'Paid'
-                              ? 'paid'
-                              : item[column.key] === 'Unpaid'
-                              ? 'unpaid'
-                              : item[column.key] === 'Refunded'
-                              ? 'refunded'
-                              : ''
-                          }
-                        >
-                          {item[column.key]}
-                        </span>
-                      ) : (
-                        item[column.key]
-                      )}
-                    </TableCell>
+                        {column.key === 'payment_status' ? (
+                          <span
+                            className={
+                              item[column.key] === 'Paid'
+                                ? 'paid'
+                                : item[column.key] === 'Unpaid'
+                                  ? 'unpaid'
+                                  : item[column.key] === 'Refunded'
+                                    ? 'refunded'
+                                    : ''
+                            }
+                          >
+                            {item[column.key]}
+                          </span>
+                        ) : column.key === 'images' ? (
+                          <Avatar src={item[column.key]}/>
+                        ) : (
+                          item[column.key]
+                        )}
+                      </TableCell>
+
                     );
                   })}
                   <TableCell>

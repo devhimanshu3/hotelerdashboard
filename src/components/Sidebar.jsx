@@ -7,14 +7,16 @@ import {
   ListItemIcon,
   Collapse,
 } from "@mui/material";
-import BeenhereIcon from '@mui/icons-material/Beenhere';
-import UpcomingIcon from '@mui/icons-material/Upcoming';
-import CancelIcon from '@mui/icons-material/Cancel';
-import DashboardIcon from "@mui/icons-material/Dashboard"; 
-import ApartmentIcon from '@mui/icons-material/Apartment';
+import BeenhereIcon from "@mui/icons-material/Beenhere";
+import UpcomingIcon from "@mui/icons-material/Upcoming";
+import CancelIcon from "@mui/icons-material/Cancel";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import ApartmentIcon from "@mui/icons-material/Apartment";
 import EventNoteIcon from "@mui/icons-material/EventNote";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
+import HomeWorkIcon from '@mui/icons-material/HomeWork';
+import DomainAddIcon from '@mui/icons-material/DomainAdd';
 import { useTheme, useMediaQuery } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
@@ -24,6 +26,7 @@ const Sidebar = ({ open, onClose }) => {
   const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
 
   const [openBooking, setOpenBooking] = useState(false);
+  const [openHotel, setOpenHotel] = useState(false);
 
   const handleNavigation = (path) => {
     navigate(path);
@@ -31,11 +34,37 @@ const Sidebar = ({ open, onClose }) => {
   };
 
   const handleToggleBooking = () => setOpenBooking(!openBooking);
+  const handleToggleHotel = () => setOpenHotel(!openHotel);
 
   const bookingSubItems = [
-    { label: "Upcoming", icon: <UpcomingIcon />, path: "/dashboard/booking/upcoming" },
-    { label: "Complete", icon: <BeenhereIcon/>, path: "/dashboard/booking/complete" },
-    { label: "Cancelled", icon: <CancelIcon />, path: "/dashboard/booking/cancelled" },
+    {
+      label: "Upcoming",
+      icon: <UpcomingIcon />,
+      path: "/dashboard/booking/upcoming",
+    },
+    {
+      label: "Complete",
+      icon: <BeenhereIcon />,
+      path: "/dashboard/booking/complete",
+    },
+    {
+      label: "Cancelled",
+      icon: <CancelIcon />,
+      path: "/dashboard/booking/cancelled",
+    },
+  ];
+
+  const hotelSubItems = [
+    {
+      label: "All Hotel",
+      icon: <HomeWorkIcon />,
+      path: "/dashboard/hotel/allhotels",
+    },
+    {
+      label: "Add Hotel",
+      icon: <DomainAddIcon />,
+      path: "/dashboard/hotel/add-hotel",
+    },
   ];
 
   return (
@@ -52,16 +81,16 @@ const Sidebar = ({ open, onClose }) => {
           boxSizing: "border-box",
           bgcolor: "var(--sidebar-color)",
           position: "fixed",
-          top: { xs:'72px', sm:'78px', md:"80px"},
+          top: { xs: "72px", sm: "78px", md: "80px" },
         },
       }}
       anchor="left"
     >
-      <List sx={{ padding:'0',}}>
+      <List sx={{ padding: "0" }}>
         <ListItem
           button
           sx={{
-            color:'var(--white-color)',
+            color: "var(--white-color)",
             "&:hover": {
               backgroundColor: "var(--orange-color)",
               color: "var(--white-color)",
@@ -77,12 +106,11 @@ const Sidebar = ({ open, onClose }) => {
           <ListItemText primary="Dashboard" />
         </ListItem>
 
-
         <ListItem
           button
           onClick={handleToggleBooking}
           sx={{
-            color:'var(--white-color)',
+            color: "var(--white-color)",
             "&:hover": {
               backgroundColor: "var(--orange-color)",
               color: "var(--white-color)",
@@ -104,8 +132,8 @@ const Sidebar = ({ open, onClose }) => {
                 button
                 key={index}
                 sx={{
-                  pl:5,
-                  color:'var(--white-color)',
+                  pl: 5,
+                  color: "var(--white-color)",
                   "&:hover": {
                     backgroundColor: "var(--orange-color)",
                     color: "var(--white-color)",
@@ -115,22 +143,22 @@ const Sidebar = ({ open, onClose }) => {
                 }}
                 onClick={() => handleNavigation(item.path)}
               >
-                <ListItemIcon sx={{ color: "var(--white-color)", minWidth:'35px' }}>{item.icon}</ListItemIcon>
+                <ListItemIcon
+                  sx={{ color: "var(--white-color)", minWidth: "35px" }}
+                >
+                  {item.icon}
+                </ListItemIcon>
                 <ListItemText primary={item.label} />
               </ListItem>
-
-
-
-                
             ))}
           </List>
         </Collapse>
 
-
         <ListItem
           button
+          onClick={handleToggleHotel}
           sx={{
-            color:'var(--white-color)',
+            color: "var(--white-color)",
             "&:hover": {
               backgroundColor: "var(--orange-color)",
               color: "var(--white-color)",
@@ -138,13 +166,41 @@ const Sidebar = ({ open, onClose }) => {
               "& .MuiSvgIcon-root": { color: "var(--white-color)" },
             },
           }}
-          onClick={() => handleNavigation("/dashboard/add-hotel")}
         >
           <ListItemIcon>
             <ApartmentIcon sx={{ color: "var(--white-color)" }} />
           </ListItemIcon>
-          <ListItemText primary="Add Hotel" />
+          <ListItemText primary="Hotels" />
+          {openHotel ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
+        <Collapse in={openHotel} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            {hotelSubItems.map((item, index) => (
+              <ListItem
+                button
+                key={index}
+                sx={{
+                  pl: 5,
+                  color: "var(--white-color)",
+                  "&:hover": {
+                    backgroundColor: "var(--orange-color)",
+                    color: "var(--white-color)",
+                    cursor: "pointer",
+                    "& .MuiSvgIcon-root": { color: "var(--white-color)" },
+                  },
+                }}
+                onClick={() => handleNavigation(item.path)}
+              >
+                <ListItemIcon
+                  sx={{ color: "var(--white-color)", minWidth: "35px" }}
+                >
+                  {item.icon}
+                </ListItemIcon>
+                <ListItemText primary={item.label} />
+              </ListItem>
+            ))}
+          </List>
+        </Collapse>
       </List>
     </Drawer>
   );

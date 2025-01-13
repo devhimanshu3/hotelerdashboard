@@ -8,6 +8,7 @@ import CompleteBooking from "./pages/CompleteBooking.jsx";
 import CancelledBooking from "./pages/CancelledBooking.jsx";
 import AddHotel from './pages/AddHotel.jsx';
 import ProtectedRoute from "./components/auth/ProtectedRoute.jsx";
+import AllHotel from "./pages/AllHotel.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -40,7 +41,11 @@ function App() {
           element: <CancelledBooking />,
         },
         {
-          path: "/dashboard/add-hotel",
+          path: "/dashboard/hotel/allhotels",
+          element: <AllHotel />,
+        },
+        {
+          path: "/dashboard/hotel/add-hotel",
           element: <AddHotel />,
         },
       ],
