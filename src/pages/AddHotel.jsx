@@ -4,6 +4,7 @@ import { useDropzone } from 'react-dropzone';
 import { Box, Button, Checkbox, FormControl, FormControlLabel, FormLabel, IconButton, MenuItem, Rating, Select, TextField, Typography } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { Form, Formik } from 'formik';
+import { Link } from 'react-router-dom';
 
 
 
@@ -38,7 +39,8 @@ const AddHotel = () => {
 
     return (
         <>
-            <Grid>
+            <Grid sx={{display:'flex', flexWrap:'wrap', justifyContent:'space-between'}}>
+                <Grid size={{xs:12, sm:12, md:10}}>
                 <Box>
                     <Typography
                         variant="h4"
@@ -69,6 +71,10 @@ const AddHotel = () => {
                         Provide the essential information to showcase your hotel and attract potential guests.
                     </Typography>
                 </Box>
+                </Grid>
+                <Grid  size={{xs:12, sm:12, md:2}} sx={{ textAlign:{xs:'center', sm:'center', md:'right'}}}>
+                <Link to='/dashboard/hotel/allhotels'><Button variant="contained" sx={{backgroundColor:'var(--orange-color)', marginBottom:'15px', "&:hover":{backgroundColor:'var(--blue-color)'}}}>View All Hotels</Button></Link>
+                </Grid>
             </Grid>
 
             <Formik>
